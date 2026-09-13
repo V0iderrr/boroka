@@ -9,21 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #0f172a;
-    --bg-glow-1: #7c3aed;
-    --bg-glow-2: #2563eb;
-    --surface: #1e293b;
-    --surface-2: #26334a;
-    --surface-3: #2f3f5c;
-    --border: #334155;
-    --border-soft: #2b394f;
-    --text: #e5e9f2;
-    --text-muted: #94a3b8;
-    --text-faint: #64748b;
-    --accent: #a78bfa;
-    --accent-2: #60a5fa;
-    --accent-ink: #0f172a;
-    --danger: #f87171;
+    --bg: #070707;
+    --bg-glow-1: #e11d2e;
+    --bg-glow-2: #7a0d16;
+    --surface: rgba(20, 9, 10, 0.55);
+    --surface-2: rgba(32, 13, 14, 0.5);
+    --surface-3: rgba(44, 17, 18, 0.55);
+    --border: rgba(225, 29, 46, 0.28);
+    --border-soft: rgba(225, 29, 46, 0.16);
+    --text: #f5eaea;
+    --text-muted: #b39496;
+    --text-faint: #7d6264;
+    --accent: #ef233c;
+    --accent-2: #7a0d16;
+    --accent-ink: #fff5f5;
+    --danger: #ff8080;
     --radius-lg: 22px;
     --radius-md: 14px;
     --radius-sm: 10px;
@@ -60,7 +60,7 @@
     height: 46vmax;
     border-radius: 50%;
     filter: blur(90px);
-    opacity: 0.22;
+    opacity: 0.32;
     z-index: 0;
     pointer-events: none;
     animation: drift 16s ease-in-out infinite alternate;
@@ -96,7 +96,9 @@
     padding: 38px 30px 30px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6);
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.75), 0 0 80px -30px rgba(225,29,46,0.35);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
   }
 
   .card::before{
@@ -217,7 +219,7 @@
     color: var(--accent-ink);
     background: linear-gradient(135deg, var(--accent), var(--accent-2));
     transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, opacity .15s ease;
-    box-shadow: 0 12px 28px -12px rgba(96,165,250,0.45);
+    box-shadow: 0 12px 28px -12px rgba(239,35,60,0.45);
   }
   .btn:hover{ filter: brightness(1.06); transform: translateY(-1px); }
   .btn:active{ transform: translateY(0px) scale(0.99); }
@@ -271,7 +273,7 @@
     background: var(--accent);
     border-color: var(--accent);
     color: var(--accent-ink);
-    box-shadow: 0 8px 18px -8px rgba(167,139,250,0.55);
+    box-shadow: 0 8px 18px -8px rgba(239,35,60,0.55);
   }
   .chip-input:focus-visible + .chip{
     outline: 2px solid var(--accent-2);
@@ -368,6 +370,8 @@
     padding: 0;
     transition: border-color .16s ease, transform .16s ease, background .16s ease;
     box-shadow: 0 10px 24px -14px rgba(0,0,0,0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
   .sound-toggle:hover{ border-color: var(--accent); background: var(--surface-3); }
   .sound-toggle:active{ transform: scale(0.94); }
